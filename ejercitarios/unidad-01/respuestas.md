@@ -159,3 +159,4 @@ Comunicación: un sistema de manejo de información o de mensajería, brinda a l
 **14. Reflexión final:** de todo lo visto en clase (definición, historia, rol del ingeniero, ciclo del software, relación con otras áreas y disciplinas, e impacto de la IA), ¿qué idea te resultó más relevante y por qué?
 
 _Respuesta:_
+De todo lo visto, la idea que me parece más relevante es que la ingeniería de software no se limita a programar, sino que implica una estructura que abarca análisis, diseño, pruebas, mantenimiento y ética profesional. Esto me parece crucial porque muestra que el rol del ingeniero de software es garantizar que los sistemas sean confiables, seguros y sostenibles en el tiempo.
