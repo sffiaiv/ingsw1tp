@@ -59,7 +59,7 @@ Es la información que recibe un sistema sobre el resultado de una acción y que
 **8. Para el mismo sistema, menciona una restricción externa real que podría afectarlo, indicando si es organizacional, regulatoria o tecnológica.**
 
 _Respuesta:_
-Una restricción externa podría ser una falla o interrupción de Internet, que impediría enviar o recibir mensajes correctamente. Es una restricción tecnológica, porque depende de la infraestructura de comunicación necesaria para que WhatsApp funcione.
+Una restricción externa podría ser una falla o interrupción de Internet, que impediría enviar o recibir mensajes correctamente. Es una restricción tecnológica, porque depende de la infraestructura de comunicación necesaria para que WhatsApp funcione correctamente.
 
 
 ---
