@@ -15,7 +15,7 @@ La Ingenieria de Software es la disciplina que aplica conceptos y principios de 
 **2. Explica con un ejemplo la diferencia entre "programar" y "hacer ingeniería de software".**
 
 _Respuesta:_
-La diferencia consiste en que programar es escribir código que resuelve un determinado problema. Por ejemplo, generar el promedio de un conjunto de notas. Mientras que la Ingeniería de Software implica todo lo que esta a su alrededor de eso. Es decir, implica planificar el mantenimiento de un sistema, analizar los requisitos funcionales y no funcionales, hacer control de versiones, documentar, testear, planificar una arquitectura que sea conveniente al proyecto. por ejemplo crear un sistema de gestión de notas para la universidad, implicaría analizar los requisitos necesarios, como dividirse el trabajo en el equipo, testear cada parte y definir como se llevará a cabo su mantenimiento y actualización. 
+La diferencia consiste en que programar es escribir código que resuelve un determinado problema. Por ejemplo, generar el promedio de un conjunto de notas. Mientras que la Ingeniería de Software implica todo lo que esta alrededor de eso. Es decir, implica planificar el mantenimiento de un sistema, analizar los requisitos funcionales y no funcionales, hacer control de versiones, documentar, testear, planificar una arquitectura que sea conveniente al proyecto. por ejemplo crear un sistema de gestión de notas para la universidad, implicaría analizar los requisitos necesarios, como dividirse el trabajo en el equipo, testear cada parte y definir como se llevará a cabo su mantenimiento y actualización. 
 
 **3. Menciona dos razones por las cuales la ingeniería de software es necesaria en el desarrollo de sistemas actuales.**
 
