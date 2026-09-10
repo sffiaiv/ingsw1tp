@@ -4,7 +4,7 @@
 
 ---
 
-## Tema 1 · Propiedades de los sistemas
+## Tema 1 · Propiedades de los sistemas.
 
 **1. Define en tus propias palabras qué es un sistema y da un ejemplo distinto al utilizado en clase.**
 
