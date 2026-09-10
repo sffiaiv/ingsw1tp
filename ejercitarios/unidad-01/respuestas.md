@@ -109,7 +109,7 @@ exige proteger a los usuarios y garantizar la confiabilidad del sistema.
 
 ---
 
-## Tema 5 · El ciclo del software
+## Tema 5 · El ciclo del software.
 
 **11. Ordena y nombra las cinco fases genéricas del ciclo de vida del software vistas en clase.**
 
