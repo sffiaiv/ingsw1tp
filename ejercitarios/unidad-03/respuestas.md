@@ -76,12 +76,13 @@ Elegiría un sistema de gestión de biblioteca y utilizaría el modelo increment
 **8. Explica con tus palabras por qué la mayoría de los procesos modernos son iterativos.**
 
 _Respuesta:_
-
+Porque permiten desarrollar el software poco a poco, revisando y mejorando cada versión según los resultados y las necesidades del usuario.
 
 **9. Menciona una ventaja y una desventaja de trabajar con iteraciones cortas.**
 
 _Respuesta:_
-
+Ventaja: Permiten detectar y corregir errores rapidamente.
+Desventaja: Requiere una revisión constante y pueden generar mas trabajo de seguimiento.
 
 ---
 
@@ -91,10 +92,10 @@ _Respuesta:_
 
 | Actividad | Qué implica |
 |---|---|
-| Especificación | |
-| Diseño e implementación | |
-| Validación | |
-| Evolución | |
+| Especificación | Definir que debe hacer el sistema y cuáles son sus requisitos. |
+| Diseño e implementación | Diseñar la solución y programar el sistema. |
+| Validación | Comprobar que el sistema funciona correctamente y cumple los requisitos. |
+| Evolución | Modificar y mejorar el sistema según nuevas necesidades. |
 
 **11. Relaciona estas cuatro actividades con las cinco fases del ciclo del software vistas en la Unidad 1 (análisis, diseño, implementación, pruebas, mantenimiento). ¿En qué se parecen y en qué se diferencian?**
 
