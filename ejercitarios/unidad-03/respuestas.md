@@ -100,9 +100,8 @@ Desventaja: Requiere una revisión constante y pueden generar mas trabajo de seg
 **11. Relaciona estas cuatro actividades con las cinco fases del ciclo del software vistas en la Unidad 1 (análisis, diseño, implementación, pruebas, mantenimiento). ¿En qué se parecen y en qué se diferencian?**
 
 _Respuesta:_
- Las cuatro actividades de Sommerville se pueden relacionar así: la especificación corresponde al análisis, el diseño e implementación abarca tanto el diseño como la implementación del ciclo de vida, la validación equivale a las pruebas y la evolución corresponde al mantenimiento. Se parecen en que ambos modelos cubren las mismas etapas generales del desarrollo de un sistema. Se diferencian en que Sommerville agrupa diseño e implementación en una sola actividad, mientras que el ciclo de vida de la Unidad 1 las trata como fases separadas.
 ---
-
+ Las cuatro actividades de Sommerville se pueden relacionar así: la especificación corresponde al análisis, el diseño e implementación abarca tanto el diseño como la implementación del ciclo de vida, la validación equivale a las pruebas y la evolución corresponde al mantenimiento. Se parecen en que ambos modelos cubren las mismas etapas generales del desarrollo de un sistema. Se diferencian en que Sommerville agrupa diseño e implementación en una sola actividad, mientras que el ciclo de vida de la Unidad 1 las trata como fases separadas.
 ## Tema 5 · Herramientas y técnicas para modelado de procesos
 
 **12. Menciona dos formas de representar un proceso (no un sistema) y explica brevemente cada una.**
@@ -114,9 +113,8 @@ Una forma es el diagrama de flujo, que muestra las actividades del proceso y el 
 
 _Respuesta:_
 
-Un patrón de proceso es una descripción de un problema que suele repetirse en distintos proyectos de software, junto con una solución probada para ese problema, de forma que se pueda reutilizar cuando vuelva a presentarse la misma situación. Por ejemplo, si en un proyecto los requisitos cambian constantemente y esto retrasa el desarrollo, se puede aplicar el patrón de "requisitos inestables", cuya solución sería adoptar un modelo de proceso incremental que permita ir ajustando el sistema en cada entrega sin tener que rehacer todo el trabajo.
 ---
-
+Un patrón de proceso es una descripción de un problema que suele repetirse en distintos proyectos de software, junto con una solución probada para ese problema, de forma que se pueda reutilizar cuando vuelva a presentarse la misma situación. Por ejemplo, si en un proyecto los requisitos cambian constantemente y esto retrasa el desarrollo, se puede aplicar el patrón de "requisitos inestables", cuya solución sería adoptar un modelo de proceso incremental que permita ir ajustando el sistema en cada entrega sin tener que rehacer todo el trabajo.
 ## Tema 6 · Ayuda automatizada al proceso
 
 **14. Explica la diferencia entre herramientas Upper-CASE y Lower-CASE.**
