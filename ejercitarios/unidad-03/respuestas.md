@@ -9,22 +9,30 @@
 **1. Define en tus propias palabras qué es un proceso de software.**
 
 _Respuesta:_
+Un proceso de software es el conjunto de pasos y actividades que se siguen para crear, desarrollar, probar, mantener y mejorar un programa o sistema de software.
 
 
 **2. Explica la diferencia entre proceso, metodología y modelo de proceso, con un ejemplo de cada uno.**
 
 _Respuesta:_
+Un proceso es el conjunto de pasos para desarrollar un software, por ejemplo: analizar, diseñar, programar y probar. Una metodología es la forma de organizar y realizar esos pasos, como Scrum. Un modelo de proceso muestra cómo se ordenan las etapas, como el modelo en cascada, donde cada etapa se realiza en orden.
 
 
 **3. Enumera las cinco actividades genéricas del marco de trabajo de Pressman.**
 
 _Respuesta:_
+1. Comunicación.
+2. Planeación.
+3. Modelado.
+4. Construcción.
+5. Despliegue.
+
 
 
 **4. Menciona dos actividades "de la sombrilla" y explica por qué se dice que "cubren" todo el proceso.**
 
 _Respuesta:_
-
+Dos actividades de la sombrilla son gestión de riesgos y aseguramiento de la calidad. Se llaman así porque están presentes durante todo el proceso de desarrollo, desde el inicio hasta la entrega del software, y ayudan a controlar los riesgos y mantener la calidad.
 
 ---
 
@@ -34,21 +42,21 @@ _Respuesta:_
 
 | Modelo | ¿Cuándo conviene usarlo? |
 |---|---|
-| Cascada | |
-| Incremental | |
-| Evolutivo (prototipos) | |
-| Evolutivo (espiral) | |
-| Concurrente | |
+| Cascada | Cuando los requisitos están claros y no se esperan muchos cambios. |
+| Incremental |  Cuando se quiere entregar el sistema por partes y agregar funciones poco a poco. |
+| Evolutivo (prototipos) | Cuando los requisitos no están claros y se necesita probar una versión inicial. |
+| Evolutivo (espiral) | Cuando el proyecto es grande y tiene muchos riesgos que deben analizarse. |
+| Concurrente | Cuando varias actividades se pueden realizar al mismo tiempo y se necesita avanzar rápidamente. |
 
 **6. Ejercicio de relación** (completá con el número que corresponda a cada letra):
 
 | Modelo de proceso | Característica principal |
 |---|---|
-| A. Cascada | ___ |
-| B. Incremental | ___ |
-| C. Prototipos | ___ |
-| D. Espiral | ___ |
-| E. Concurrente | ___ |
+| A. Cascada | 2 |
+| B. Incremental | 4 |
+| C. Prototipos | 5 |
+| D. Espiral | 1 |
+| E. Concurrente | 3 |
 
 1. Combina iteración con análisis explícito de riesgo en cada vuelta.
 2. Enfoque secuencial y lineal, actividad por actividad.
@@ -59,7 +67,7 @@ _Respuesta:_
 **7. Elegí un proyecto de software (hipotético o real) y justificá qué modelo de proceso usarías para desarrollarlo y por qué.**
 
 _Respuesta:_
-
+Elegiría un sistema de gestión de biblioteca y utilizaría el modelo incremental, porque permite desarrollar el sistema por partes, por ejemplo: primero el registro de usuarios, luego el préstamo y devolución de libros y finalmente las consultas. Así se puede probar cada parte y mejorarla antes de completar todo el sistema.
 
 ---
 
