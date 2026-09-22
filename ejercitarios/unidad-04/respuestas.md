@@ -15,9 +15,9 @@ Es el proceso mediante el cual se descubre, analiza, documenta y gestiona lo que
 
 _Respuesta:_
 
-Requerimiento: es una necesidad o condición individual que el sistema debe cumplir. Ejemplo: "El sistema debe permitir al usuario recuperar su contraseña por email."
-Especificación de requisitos (documento): es el documento formal donde se recopilan, organizan y describen de manera estructurada todos los requerimientos del sistema (a veces llamado SRS, Software Requirements Specification). Ejemplo: un documento de 30 páginas que detalla todos los requerimientos funcionales y no funcionales de un sistema de biblioteca.
-Ingeniería de requisitos: es el proceso completo —todas las actividades (obtención, análisis, especificación, validación, gestión)— que lleva a producir y mantener esa especificación. Ejemplo: las reuniones, entrevistas y talleres que un equipo realiza durante dos semanas para definir qué necesita un cliente antes de escribir el SRS.
+- Requerimiento: es una necesidad o condición individual que el sistema debe cumplir. Ejemplo: "El sistema debe permitir al usuario recuperar su contraseña por email."
+- Especificación de requisitos (documento): es el documento formal donde se recopilan, organizan y describen de manera estructurada todos los requerimientos del sistema (a veces llamado SRS, Software Requirements Specification). Ejemplo: un documento de 30 páginas que detalla todos los requerimientos funcionales y no funcionales de un sistema de biblioteca.
+- Ingeniería de requisitos: es el proceso completo —todas las actividades (obtención, análisis, especificación, validación, gestión)— que lleva a producir y mantener esa especificación. Ejemplo: las reuniones, entrevistas y talleres que un equipo realiza durante dos semanas para definir qué necesita un cliente antes de escribir el SRS.
 ## Tema 2 · Tipos de requerimientos
 
 **3. Ejercicio de relación** (completen con el número que corresponda a cada letra):
@@ -45,10 +45,10 @@ Ingeniería de requisitos: es el proceso completo —todas las actividades (obte
 _Respuesta:_
 
 Tomando como ejemplo una app de delivery de comida:
-
+---
 Requerimiento funcional: "El sistema debe permitir al usuario rastrear en tiempo real la ubicación del repartidor en un mapa."
 Requerimiento no funcional: "El sistema debe cargar el mapa de rastreo en menos de 2 segundos con conexión 4G."
----
+
 
 ## Tema 3 · Características de los requerimientos
 
