@@ -119,17 +119,19 @@ Un patrón de proceso es una descripción de un problema que suele repetirse en 
 
 **14. Explica la diferencia entre herramientas Upper-CASE y Lower-CASE.**
 
-_Respuesta:_
+_Respuesta:_ una herramienta Upper-CASE se centra principalmente en las fases iniciales de un proyecto como las fases de planificacion, analisis, requisitos y diseños, mientras que una herramienta Lower-CASE se centra en las fases finales como construccion, generacion de codigo, pruebas e implementacion.
+Podemos decir que una Upper-CASE se centra en Front-end y Lower-CASE se centra en Back-end.
 
 
 **15. Menciona tres herramientas que consideren CASE (de su propia experiencia o investigación) y clasifíquenlas según la categoría a la que pertenecen.**
 
 | Herramienta | Categoría (Upper / Lower / I-CASE) |
 |---|---|
-| | |
-| | |
-| | |
+|PowerDesigner: modelacion y diseño de datos | Upper-CASE |
+|EclipseIDE: codificacion, depuracion y pruebas| Lower-CASE |
+|IBM Rational Software Architect: ciclo de vida, modelacion UML | I-CASE |
 
 **16. Reflexión final:** de los modelos de proceso vistos en esta unidad, ¿cuál elegirían para un proyecto personal? Justifiquen su elección considerando el tamaño del proyecto, el tiempo disponible y el nivel de certeza sobre los requisitos.
 
 _Respuesta:_
+Desde experiencia personal, utilizaría Eclipse para un proyecto de programación usando Java ya que es una herramienta altamente funcional con posibilidad de integración de otros programas y funcionalidades, permitiendo pruebas de integracion y depuracion, asi como prueba de funcionalidades generales del sistema desarrollado 
