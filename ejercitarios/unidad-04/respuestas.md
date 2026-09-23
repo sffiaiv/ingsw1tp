@@ -46,8 +46,8 @@ _Respuesta:_
 
 Tomando como ejemplo una app de delivery de comida:
 ---
-Requerimiento funcional: "El sistema debe permitir al usuario rastrear en tiempo real la ubicación del repartidor en un mapa."
-Requerimiento no funcional: "El sistema debe cargar el mapa de rastreo en menos de 2 segundos con conexión 4G."
+**Requerimiento funcional:** "El sistema debe permitir al usuario rastrear en tiempo real la ubicación del repartidor en un mapa."
+**Requerimiento no funcional:** "El sistema debe cargar el mapa de rastreo en menos de 2 segundos con conexión 4G."
 
 
 ## Tema 3 · Características de los requerimientos
@@ -73,18 +73,18 @@ El sistema debe responder a las solicitudes de los usuarios en un máximo de 2 s
 **8. Enumera las cuatro etapas del ciclo de obtención y análisis de requerimientos vistas en clase.**
 
 _Respuesta:_
-1. Descubrimiento de requerimientos: obtener información de los usuarios y demás interesados.
-2. Clasificación y organización: agrupar y ordenar los requerimientos según sus características.
-3. Priorización y negociación: determinar cuáles son más importantes y resolver posibles conflictos.
-4. Especificación: documentar los requerimientos de forma clara y detallada.
+1. **Descubrimiento de requerimientos:** obtener información de los usuarios y demás interesados.
+2. **Clasificación y organización:** agrupar y ordenar los requerimientos según sus características.
+3. **Priorización y negociación:** determinar cuáles son más importantes y resolver posibles conflictos.
+4. **Especificación:** documentar los requerimientos de forma clara y detallada.
 
 **9. Ejercicio de relación** (completen con el número que corresponda a cada letra):
 
 | Técnica de obtención | Situación en que conviene usarla |
 |---|---|
-| A. Entrevistas | _3_ |
-| B. Observación | _1_ |
-| C. Talleres / workshops | _2_ |
+| A. Entrevistas | 3 |
+| B. Observación | 1 |
+| C. Talleres / workshops | 2 |
 
 1. Cuando el usuario no puede verbalizar fácilmente lo que necesita.
 2. Cuando hay varios interesados con visiones distintas que negociar.
@@ -98,10 +98,10 @@ _Respuesta:_
 
 | Técnica | Ventaja | Limitación |
 |---|---|---|
-| Lenguaje natural estructurado | Es fácil de entender y permite describir los requisitos con claridad. | Puede ser ambiguo si no se redacta correctamente. |
-| Casos de uso | Permiten mostrar claramente cómo interactúa el usuario con el sistema. | Pueden volverse largos o complejos en sistemas grandes. |
-| Historias de usuario | Son simples y se enfocan en las necesidades del usuario. | No describen todos los detalles técnicos del sistema. |
-| Diagramas (UML) | Permiten representar visualmente la estructura y comportamiento del sistema. | Requieren conocer la notación UML para interpretarlos correctamente. |
+| Lenguaje natural estructurado |  |
+| Casos de uso |  |
+| Historias de usuario | |
+| Diagramas (UML) | |
 
 ---
 
