@@ -119,6 +119,7 @@ Ej.: en un entorno aeroespacial y defensa, como lo pueden ser las misiones de la
 **12. Explica la diferencia entre un prototipo desechable y un prototipo evolutivo, con un ejemplo de un proyecto donde usarías cada uno.**
 
 _Respuesta:_ un prototipo desechable cumple una determinada funcion, como lo es la de validar y clarificar los requisitos poco comprendidos del sistema, con una calidad baja y un desempeño pobre ya que luego de cumplir con su funcion se descarta, en cambio un prototipo evolutivo se usa para convertirse progresivamente en el sistema final al refinarse iterativamente hasta llegar al producto definido, debe cumplir con los estandares de calidad del software de produccion usando los requisitos mejor conocidos y va creciendo hasta una funcionalidad total.
+
 Un ejemplo de un prototipo desechable serian los bocetos en papel de interfaces de usuario y prueba de validacion temprana de diseños en etapas conceptuales, y un prototipo evolutivo se puede usar para el desarrollo de una plataforma como comercio electronico web con requisitos cambiantes para reducir el riesgo de trabajo doble.
 
 
