@@ -98,10 +98,10 @@ _Respuesta:_
 
 | Técnica | Ventaja | Limitación |
 |---|---|---|
-| Lenguaje natural estructurado |  |
-| Casos de uso |  |
-| Historias de usuario | |
-| Diagramas (UML) | |
+| Lenguaje natural estructurado |Es fácil de entender para usuarios y desarrolladores, ya que utiliza un lenguaje cercano al cotidiano pero con una estructura definida.|Puede generar ambigüedades si los requisitos no se redactan con suficiente precisión.  |
+| Casos de uso | Permiten describir claramente cómo un usuario interactúa con el sistema para alcanzar un objetivo | Pueden volverse extensos y complejos cuando el sistema tiene muchas funcionalidades o actores |
+| Historias de usuario | Son breves y fáciles de comprender, y permiten centrarse en las necesidades y objetivos del usuario.| Pueden ser demasiado generales y no especificar todos los detalles técnicos necesarios para implementar el requisito |
+| Diagramas (UML) | Permiten representar visualmente la estructura y comportamiento del sistema, facilitando su comprensión| Requieren conocimientos de UML y algunos diagramas pueden resultar difíciles de interpretar para usuarios no técnicos. |
 
 ---
 
@@ -109,8 +109,8 @@ _Respuesta:_
 
 **11. ¿Qué es una especificación formal y en qué tipo de sistemas se justifica su uso? Da un ejemplo hipotético de un sistema donde la usarías.**
 
-_Respuesta:_
-
+_Respuesta:_ es una descripcion matematica de las propiedades y el comportamiento de un sistema, definida mediante un lenguaje formal con sitaxis y semanticas precisas, que especifica que debe hacer el sistema sin detallar como se implementa. El uso de una especificacion formal se justifica principalmente en sistemas criticos donde el costo de fallos es alto o existen riesgos para la seguridad y la integridad. 
+Ej.: en un entorno aeroespacial y defensa, como lo pueden ser las misiones de la NASA, donde los errores pueden resultar en la perdida de equipos valiosos o perdida de vidas humanas.
 
 ---
 
@@ -118,7 +118,8 @@ _Respuesta:_
 
 **12. Explica la diferencia entre un prototipo desechable y un prototipo evolutivo, con un ejemplo de un proyecto donde usarías cada uno.**
 
-_Respuesta:_
+_Respuesta:_ un prototipo desechable cumple una determinada funcion, como lo es la de validar y clarificar los requisitos poco comprendidos del sistema, con una calidad baja y un desempeño pobre ya que luego de cumplir con su funcion se descarta, en cambio un prototipo evolutivo se usa para convertirse progresivamente en el sistema final al refinarse iterativamente hasta llegar al producto definido, debe cumplir con los estandares de calidad del software de produccion usando los requisitos mejor conocidos y va creciendo hasta una funcionalidad total.
+Un ejemplo de un prototipo desechable serian los bocetos en papel de interfaces de usuario y prueba de validacion temprana de diseños en etapas conceptuales, y un prototipo evolutivo se puede usar para el desarrollo de una plataforma como comercio electronico web con requisitos cambiantes para reducir el riesgo de trabajo doble.
 
 
 ---
