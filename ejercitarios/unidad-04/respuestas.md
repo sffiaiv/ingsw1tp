@@ -56,15 +56,15 @@ Requerimiento no funcional: "El sistema debe cargar el mapa de rastreo en menos 
 
 | Característica | Pregunta que permite verificarla |
 |---|---|
-| Correcto | |
-| No ambiguo | |
-| Completo | |
-| Verificable | |
+| Correcto | ¿El requerimiento representa realmente una necesidad del usuario? |
+| No ambiguo | ¿El requerimiento puede interpretarse de una sola manera? |
+| Completo | ¿Contiene toda la información necesaria para entenderlo? |
+| Verificable | ¿Se puede comprobar mediante una prueba si se cumple? |
 
 **7. Tomá el requerimiento "El sistema debe ser rápido" y reescribilo de forma que cumpla con las características de un buen requerimiento vistas en clase.**
 
 _Respuesta:_
-
+El sistema debe responder a las solicitudes de los usuarios en un máximo de 2 segundos bajo condiciones normales de uso.
 
 ---
 
@@ -73,15 +73,18 @@ _Respuesta:_
 **8. Enumera las cuatro etapas del ciclo de obtención y análisis de requerimientos vistas en clase.**
 
 _Respuesta:_
-
+1. Descubrimiento de requerimientos: obtener información de los usuarios y demás interesados.
+2. Clasificación y organización: agrupar y ordenar los requerimientos según sus características.
+3. Priorización y negociación: determinar cuáles son más importantes y resolver posibles conflictos.
+4. Especificación: documentar los requerimientos de forma clara y detallada.
 
 **9. Ejercicio de relación** (completen con el número que corresponda a cada letra):
 
 | Técnica de obtención | Situación en que conviene usarla |
 |---|---|
-| A. Entrevistas | ___ |
-| B. Observación | ___ |
-| C. Talleres / workshops | ___ |
+| A. Entrevistas | _3_ |
+| B. Observación | _1_ |
+| C. Talleres / workshops | _2_ |
 
 1. Cuando el usuario no puede verbalizar fácilmente lo que necesita.
 2. Cuando hay varios interesados con visiones distintas que negociar.
@@ -95,10 +98,10 @@ _Respuesta:_
 
 | Técnica | Ventaja | Limitación |
 |---|---|---|
-| Lenguaje natural estructurado | | |
-| Casos de uso | | |
-| Historias de usuario | | |
-| Diagramas (UML) | | |
+| Lenguaje natural estructurado | Es fácil de entender y permite describir los requisitos con claridad. | Puede ser ambiguo si no se redacta correctamente. |
+| Casos de uso | Permiten mostrar claramente cómo interactúa el usuario con el sistema. | Pueden volverse largos o complejos en sistemas grandes. |
+| Historias de usuario | Son simples y se enfocan en las necesidades del usuario. | No describen todos los detalles técnicos del sistema. |
+| Diagramas (UML) | Permiten representar visualmente la estructura y comportamiento del sistema. | Requieren conocer la notación UML para interpretarlos correctamente. |
 
 ---
 
