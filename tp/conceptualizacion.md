@@ -19,7 +19,7 @@ layout: default
 
 | Nombre | Rol |
 |---|---|
-| [Nombre 1] | [rol] |
+| [Sofia Esther Vargas Vallejos] | [Diseño] |
 | [Nombre 2] | [rol] |
 | [Nombre 3] | [rol] |
 
