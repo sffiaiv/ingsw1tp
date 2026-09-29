@@ -130,7 +130,8 @@ Un ejemplo de un prototipo desechable serian los bocetos en papel de interfaces 
 **13. Menciona dos técnicas de construcción rápida de prototipos vistas en clase y explica brevemente en qué consiste cada una.**
 
 _Respuesta:_
-
+1. Prototipo desechable: se crea una versión sencilla del sistema para probar ideas y luego se descarta.
+2. Prototipo evolutivo: se crea una versión inicial que se va mejorando hasta convertirse en el sistema final.
 
 ---
 
@@ -140,9 +141,9 @@ _Respuesta:_
 
 | Técnica de validación | Qué tipo de problema detecta mejor |
 |---|---|
-| Revisiones de requisitos | |
-| Prototipado | |
-| Generación de casos de prueba | |
+| Revisiones de requisitos | Errores, contradicciones y ambigüedades en los requerimientos |
+| Prototipado | Problemas de usabilidad y necesidades que no fueron comprendidas correctamente |
+| Generación de casos de prueba | Requerimientos que no se pueden comprobar o que no se cumplen |
 
 ---
 
