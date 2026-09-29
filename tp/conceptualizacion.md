@@ -11,7 +11,7 @@ layout: default
 En la actualidad, la "Mini Farmacia Familiar" administrada por la señora Doris gestiona todos sus procesos operativos, como el registro de ventas y el control de inventario, de manera íntegramente manual mediante el uso de cuadernos y planillas físicas. Esta metodología de trabajo genera una problemática concreta: la incapacidad de mantener un control preciso y en tiempo real de los productos. Como consecuencias observables de esta situación, el negocio experimenta una notable lentitud en la atención en el mostrador, discrepancias recurrentes en el arqueo de caja diario y, de manera crítica, pérdidas económicas ocasionadas por el vencimiento de medicamentos en los estantes al no existir un seguimiento estricto de sus fechas de caducidad.
 ## 1. Presentación del proyecto
 
-**Nombre del sistema:** FarmaClick.
+**Nombre del sistema:** FarmaClick
 
 **Integrantes del grupo:**
 
