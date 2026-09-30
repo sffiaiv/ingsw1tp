@@ -152,6 +152,7 @@ _Respuesta:_
 **15. Explica con tus palabras qué es la trazabilidad de requerimientos y por qué es importante en un proyecto real.**
 
 _Respuesta:_
+La trazabilidad es la capacidad de seguir cada requerimiento desde su origen hasta su implementación y pruebas. Es importante porque permite controlar los cambios y comprobar que todos los requerimientos se cumplan.
 
 
 ---
@@ -161,8 +162,12 @@ _Respuesta:_
 **16. Menciona dos métricas que se pueden aplicar a los requerimientos de un proyecto y qué información le aporta cada una al equipo.**
 
 _Respuesta:_
+Cantidad de requerimientos: indica cuántos requerimientos tiene el proyecto y ayuda a estimar su tamaño.
+
+Porcentaje de requerimientos cumplidos: indica cuántos requerimientos fueron implementados y permite medir el avance del proyecto.
 
 
 **17. Reflexión final:** pensá en un proyecto de software (hipotético o real). Describí qué técnica de obtención, qué técnica de especificación y qué técnica de validación usarías para sus requerimientos, y justificá tu elección considerando el tipo de proyecto y de usuarios.
 
 _Respuesta:_
+Para un sistema de gestión de una farmacia, utilizaría las entrevistas para conocer las necesidades de los farmacéuticos, las historias de usuario para describir los requerimientos de forma sencilla y el prototipado para comprobar si el sistema es fácil de usar. Elegiría estas técnicas porque permiten conocer las necesidades de los usuarios y mejorar el sistema antes de su implementación final.
