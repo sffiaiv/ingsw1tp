@@ -18,7 +18,7 @@ En la actualidad, la "Mini Farmacia Familiar" administrada por la señora Doris 
 | Nombre | Rol |
 |---|---|
 | **Sofia Esther Vargas Vallejos** | **Desarrollador Back-End :**  Crea la lógica del negocio, gestiona el servidor, diseña la base de datos y crea las APIs que el Front-end va a construir  |
-| **Manuel Galeano**| **Desarrollador Front-End (UI/UX):** se encarga de todo lo que el usuario ve y con lo que interactúa. Construye la interfaz gráfica, (pantallas, botones, formularios) asegurando que el diseño sea responsivo e intuitivo.|
+| **Edgar Juan Manuel Galeano Verón**| **Desarrollador Front-End (UI/UX):** se encarga de todo lo que el usuario ve y con lo que interactúa. Construye la interfaz gráfica, (pantallas, botones, formularios) asegurando que el diseño sea responsivo e intuitivo.|
 | **Milagros  Montserrat  Alcaraz Quiñonez** | **Líder de proyecto, DevOps:** coordina el trabajo usando metodologías agiles, organiza el repositorio en GitHub, resuelve bloqueos del equipo y configura el servidor, entorno donde vivirá el proyecto  |
 | **Blas Ariel Benega López** |**Tester(QA)/ Documentador:** su misión es romper la aplicación antes de que se entregue. Realiza pruebas manuales y automatizadas para poder encontrar bugs, revisar que el código de sus compañeros este bien al desplegarse, y redactar manual técnico o la documentación del sistema. |
 
