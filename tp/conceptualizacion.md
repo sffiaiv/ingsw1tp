@@ -108,7 +108,7 @@ El sistema será una aplicación que permitirá buscar medicamentos por nombre d
 |---|---|---|
 | Lenguaje de programación |JavaScript | Permite usar un mismo lenguaje tanto en el cliente como en el servidor, agilizando el desarrollo y contando con una amplia variedad de librerías para la gestión de datos. |
 | Framework | React (Front-end) + Node.js con Express (Back-end)| Permite construir una interfaz rápida, dinámica e intuitiva para las ventas en el mostrador, junto con un servidor liviano y eficiente para procesar las consultas del inventario.|
-| Base de datos | PostgreSQL (o MySQL)| Es un motor relacional gratuito y robusto que garantiza la integridad y consistencia de los datos (inventario, precios y ventas) mediante transacciones seguras. |
+| Base de datos | PostgreSQL (o MySQL)| Es un motor relacional gratuito y robusto que garantiza la integridad y consistencia de los datos (inventario, precios y ventas) mediante transacciones seguras.  |
 
 ---
 
