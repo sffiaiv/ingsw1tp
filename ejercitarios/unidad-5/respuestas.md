@@ -12,7 +12,7 @@
 _Respuesta:_
 **Diseño conceptual:** Es la etapa donde se define qué va a hacer el sistema a un alto nivel, enfocándose en los requerimientos del usuario, las entidades principales del negocio y su lógica general, sin preocuparse por la tecnología, lenguajes de programación o bases de datos específicas que se van a usar.
 
-**Diseño técnico (detallado):** Es la etapa donde se define cómo se va a implementar lo anterior, especificando la tecnología exacta, estructuras de datos físicas, algoritmos, frameworks, protocolos de comunicación y componentes de hardware o software concretos.
+**Diseño técnico (detallado):** Es la etapa donde se define cómo se va a implementar lo anterior, especificando la tecnología exacta, estructuras de datos físicas, algoritmos, frameworks, protocolos de comunicación y componentes de hardware o software concretos. 
 
 **Ejemplo para un sistema de gestión de una biblioteca:**
 
