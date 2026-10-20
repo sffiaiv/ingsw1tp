@@ -10,16 +10,24 @@
 **1. Explica con tus palabras la diferencia entre diseño conceptual y diseño técnico (detallado). Da un ejemplo de una decisión de cada tipo para un sistema de gestión de una biblioteca.**
 
 _Respuesta:_
+**Diseño conceptual:** Es la etapa donde se define qué va a hacer el sistema a un alto nivel, enfocándose en los requerimientos del usuario, las entidades principales del negocio y su lógica general, sin preocuparse por la tecnología, lenguajes de programación o bases de datos específicas que se van a usar.
 
+**Diseño técnico (detallado):** Es la etapa donde se define cómo se va a implementar lo anterior, especificando la tecnología exacta, estructuras de datos físicas, algoritmos, frameworks, protocolos de comunicación y componentes de hardware o software concretos.
+
+**Ejemplo para un sistema de gestión de una biblioteca:**
+
+**Decisión conceptual:** Decidir que el sistema debe permitir registrar usuarios (socios) y asociarles un límite máximo de libros que pueden retirar simultáneamente.
+
+**Decisión técnico (detallado):** Decidir que la tabla de socios se almacenará en una base de datos PostgreSQL utilizando una clave primaria de tipo UUID, y que la validación del límite de libros se hará mediante un procedimiento almacenado (stored procedure) en la base de datos.
 
 **2. Completa el siguiente cuadro sobre los elementos del modelo de diseño.**
 
 | Elemento del diseño | ¿Qué define? | Ejemplo en un sistema de inscripciones |
 |---|---|---|
-| Diseño de datos |  |  |
-| Diseño arquitectónico |  |  |
-| Diseño de interfaces |  |  |
-| Diseño de componentes |  |  |
+| Diseño de datos | La estructura, organización y representación de la información que la aplicación procesará, almacenará y manipulará. | Las tablas y relaciones en la base de datos para almacenar estudiantes, materias, cupos y actas de inscripción. |
+| Diseño arquitectónico | La estructura global del sistema, organizándolo en componentes principales (capas o subsistemas) y cómo interactúan entre sí. | Definir una arquitectura de 3 capas: Presentación (pantallas web), Lógica de Negocio (reglas de inscripción) y Acceso a Datos. |
+| Diseño de interfaces | Cómo interactúan los usuarios con el sistema (interfaz humana), cómo se comunican los subsistemas internos entre sí, y la interacción con sistemas externos. | El diseño de las pantallas y formularios web donde el alumno selecciona las materias y hace clic en "Inscribirse". |
+| Diseño de componentes | La estructura interna y lógica de los módulos de software individuales (clases, funciones o servicios) que realizan tareas específicas. | El diseño detallado de la clase o servicio ValidadorDeCorrelativas, que verifica si el alumno aprobó las materias previas. |
 
 
 ---
@@ -30,12 +38,12 @@ _Respuesta:_
 
 | Concepto | Número |
 |---|---|
-| A. Abstracción | ___ |
-| B. Refinamiento progresivo | ___ |
-| C. Ocultamiento de información | ___ |
-| D. Separación de intereses | ___ |
-| E. Patrón | ___ |
-| F. Refactorización | ___ |
+| A. Abstracción | 4 |
+| B. Refinamiento progresivo | 6 |
+| C. Ocultamiento de información | 2 |
+| D. Separación de intereses | 5 |
+| E. Patrón | 3 |
+| F. Refactorización | 1 |
 
 1. Mejorar la estructura interna sin cambiar el comportamiento externo.
 2. Cada módulo esconde sus decisiones internas y solo expone su interfaz.
@@ -49,22 +57,59 @@ _Respuesta:_
 _Respuesta:_
 
 
----
-
-## Tema 3 · Descomposición y modularidad
-
 **5. Explica por qué no conviene dividir un sistema ni en muy pocos ni en demasiados módulos. ¿Qué costos aumentan en cada extremo?**
 
 _Respuesta:_
 
+**Nivel 1 (Descripción general):**
 
+1- Registrar una venta en el comercio.
+
+**Nivel 2 (Primer desglose de pasos):**
+
+1- Escanear o ingresar los productos seleccionados por el cliente.
+
+2- Calcular el total a pagar aplicando impuestos y descuentos si corresponden.
+
+3- Procesar el pago (efectivo, tarjeta o transferencia).
+
+4- Generar y entregar el comprobante de venta.
+
+**Nivel 3 (Refinando el paso 3 del nivel anterior: "Procesar el pago"):**
+
+1- Solicitar al cliente el medio de pago deseado.
+
+2- Si es con tarjeta: conectar con la pasarela de pagos, solicitar PIN o lectura contactless, y esperar la autorización del banco.
+
+3- Si es en efectivo: ingresar el monto recibido, calcular el vuelto y abrir la caja registradora.
+
+4- Registrar la transacción exitosa en el sistema de caja.
+
+## Tema 3 · Descomposición y modularidad
+
+**5.Explica por qué no conviene dividir un sistema ni en muy pocos ni en demasiados módulos. ¿Qué costos aumentan en cada extremo?**
+
+No conviene irse a los extremos porque se afecta directamente la complejidad y el mantenimiento del software:
+
+**Demasiado pocos módulos (Módulos gigantes o monolíticos):** El sistema se divide en pocas partes pero muy grandes. Aumentan los costos de mantenibilidad y comprensión, ya que cada módulo hace demasiadas cosas (baja cohesión), haciendo que sea difícil de entender, probar o modificar sin romper otra funcionalidad.
+
+**Demasiados módulos (Exceso de fragmentación):** El sistema se divide en una infinidad de piezas diminutas. Aumentan los costos de integración y coordinación, ya que hay que gestionar una gran cantidad de dependencias, llamadas y comunicación entre módulos, lo que vuelve el sistema excesivamente complejo de ensamblar y depurar.
 **6. Para un sistema de gestión de un consultorio médico, propone dos descomposiciones distintas e indica qué módulos tendría cada una.**
 
 | Estrategia | Módulos propuestos |
 |---|---|
-| Por capas |  |
-| Por dominio |  |
+| Por capas | 1. Capa de Presentación: Interfaz de usuario (web o app móvil para pacientes y secretarios).
 
+2. Capa de Lógica de Negocio: Reglas de turnos, historias clínicas y validaciones de obras sociales.
+
+3. Capa de Acceso a Datos: Conexión y persistencia con la base de datos del consultorio. |
+| Por dominio | 1. Módulo de Gestión de Pacientes: Altas, bajas, modificaciones y datos de contacto.
+
+2. Módulo de Agenda y Turnos: Reserva, cancelación y recordatorios de citas médicas.
+
+3. Módulo de Historia Clínica: Registro de diagnósticos, recetas y evolución del paciente.
+
+4. Módulo de Facturación y Obras Sociales: Cobros, bonos y liquidación a prepagas. |
 
 ---
 
