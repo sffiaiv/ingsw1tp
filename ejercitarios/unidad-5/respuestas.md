@@ -92,13 +92,9 @@ No conviene irse a los extremos porque se afecta directamente la complejidad y e
 **6. Para un sistema de gestión de un consultorio médico, propone dos descomposiciones distintas e indica qué módulos tendría cada una.**
 
 | Estrategia | Módulos propuestos |
-|---|---|
-| Por capas | 1. Capa de Presentación: Interfaz de usuario (web o app móvil para pacientes y secretarios). 2. Capa de Lógica de Negocio: Reglas de turnos, historias clínicas y validaciones de obras sociales. 3. Capa de Acceso a Datos: Conexión y persistencia con la base de datos del consultorio. |
-| Por dominio | 1. Módulo de Gestión de Pacientes: Altas, bajas, modificaciones y datos de contacto.
-2. Módulo de Agenda y Turnos: Reserva, cancelación y recordatorios de citas médicas.
-3. Módulo de Historia Clínica: Registro de diagnósticos, recetas y evolución del paciente.
-4. Módulo de Facturación y Obras Sociales: Cobros, bonos y liquidación a prepagas. |
-
+| :--- | :--- |
+| **Por capas** | 1. **Capa de Presentación:** Interfaz de usuario (web o app móvil para pacientes y secretarios).<br>2. **Capa de Lógica de Negocio:** Reglas de turnos, historias clínicas y validaciones de obras sociales.<br>3. **Capa de Acceso a Datos:** Conexión y persistencia con la base de datos del consultorio. |
+| **Por dominio** | 1. **Módulo de Gestión de Pacientes:** Altas, bajas, modificaciones y datos de contacto.<br>2. **Módulo de Agenda y Turnos:** Reserva, cancelación y recordatorios de citas médicas.<br>3. **Módulo de Historia Clínica:** Registro de diagnósticos, recetas y evolución del paciente.<br>4. **Módulo de Facturación y Obras Sociales:** Cobros, bonos y liquidación a prepagas.|
 ---
 
 ## Tema 4 · Cohesión y acoplamiento
