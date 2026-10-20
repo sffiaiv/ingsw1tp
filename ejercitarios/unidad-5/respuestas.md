@@ -55,12 +55,6 @@ _Respuesta:_
 **4. Aplica refinamiento progresivo a la tarea "Registrar una venta en un comercio": escribí al menos tres niveles de detalle, refinando en el tercer nivel uno de los pasos del segundo.**
 
 _Respuesta:_
-
-
-**5. Explica por qué no conviene dividir un sistema ni en muy pocos ni en demasiados módulos. ¿Qué costos aumentan en cada extremo?**
-
-_Respuesta:_
-
 **Nivel 1 (Descripción general):**
 
 1- Registrar una venta en el comercio.
@@ -85,6 +79,7 @@ _Respuesta:_
 
 4- Registrar la transacción exitosa en el sistema de caja.
 
+
 ## Tema 3 · Descomposición y modularidad
 
 **5.Explica por qué no conviene dividir un sistema ni en muy pocos ni en demasiados módulos. ¿Qué costos aumentan en cada extremo?**
@@ -98,17 +93,10 @@ No conviene irse a los extremos porque se afecta directamente la complejidad y e
 
 | Estrategia | Módulos propuestos |
 |---|---|
-| Por capas | 1. Capa de Presentación: Interfaz de usuario (web o app móvil para pacientes y secretarios).
-
-2. Capa de Lógica de Negocio: Reglas de turnos, historias clínicas y validaciones de obras sociales.
-
-3. Capa de Acceso a Datos: Conexión y persistencia con la base de datos del consultorio. |
+| Por capas | 1. Capa de Presentación: Interfaz de usuario (web o app móvil para pacientes y secretarios). 2. Capa de Lógica de Negocio: Reglas de turnos, historias clínicas y validaciones de obras sociales. 3. Capa de Acceso a Datos: Conexión y persistencia con la base de datos del consultorio. |
 | Por dominio | 1. Módulo de Gestión de Pacientes: Altas, bajas, modificaciones y datos de contacto.
-
 2. Módulo de Agenda y Turnos: Reserva, cancelación y recordatorios de citas médicas.
-
 3. Módulo de Historia Clínica: Registro de diagnósticos, recetas y evolución del paciente.
-
 4. Módulo de Facturación y Obras Sociales: Cobros, bonos y liquidación a prepagas. |
 
 ---
