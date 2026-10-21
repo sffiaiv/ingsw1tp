@@ -159,23 +159,24 @@ _Respuesta:_
 
 | Aspecto | Monolito modular | Microservicios |
 |---|---|---|
-| Despliegue |  |  |
-| Escalado |  |  |
-| Complejidad operativa |  |  |
-| ¿Cuándo conviene? |  |  |
+| Despliegue | Se despliega como una única unidad (un solo archivo ejecutable o contenedor). Si cambia una línea, se republica toda la aplicación.  |  Despliegue independiente por cada servicio. Cada microservicio se actualiza por separado sin afectar a los demás.|
+| Escalado | Se escala horizontalmente duplicando la aplicación entera (copias idénticas del monolito), lo que consume más recursos.  | Escalado granular y eficiente; se escalan únicamente aquellos servicios específicos que experimentan mayor demanda.  |
+| Complejidad operativa | Baja o moderada. Requiere un solo repositorio, una sola base de datos y un pipeline de CI/CD sencillo.   | Alta. Requiere orquestadores (como Kubernetes), gestión distribuida de bases de datos, trazabilidad distribuida y redes complejas (Service Mesh).  |
+| ¿Cuándo conviene? | En equipos pequeños, startups en fase temprana (MVP) o dominios de negocio donde la complejidad aún no justifica la distribución.  | En sistemas grandes con dominios bien acotados, equipos de desarrollo autónomos y una alta necesidad de escalado independiente y despliegue continuo. |
 
 **13. Una empresa nueva con tres desarrolladores quiere empezar su producto directamente con quince microservicios. ¿Qué le recomendarías y por qué?**
 
-_Respuesta:_
+_Respuesta:_ 
+Les recomendaría rechazar los microservicios y optar por un Monolito Modular. Debido a que con un equipo de solo tres personas, la carga cognitiva y operativa de mantener quince microservicios sería insostenible. En lugar de escribir código de negocio, el equipo pasaría la mayor parte del tiempo configurando redes, infraestructura, contratos de API, descubrimiento de servicios y pipelines de despliegue. Un monolito modular les permite estructurar el código en dominios separados (preparándolos para el futuro) pero con la simplicidad de un único despliegue y una base de código centralizada.
 
 
 **14. Para cada escenario, indica el atributo de calidad prioritario y un estilo arquitectónico que lo favorezca.**
 
 | Escenario | Atributo prioritario | Estilo que lo favorece |
 |---|---|---|
-| Plataforma de venta de entradas con picos enormes de demanda al abrir la venta. |  |  |
-| Sistema bancario de transferencias entre cuentas. |  |  |
-| Sistema académico cuyas reglas de inscripción cambian cada semestre. |  |  |
+| Plataforma de venta de entradas con picos enormes de demanda al abrir la venta. | Escalabilidad | Microservicios (permite escalar horizontalmente solo el módulo de venta/pagos) o Arquitectura orientada a eventos. |
+| Sistema bancario de transferencias entre cuentas. | Consistencia (Fiabilidad / Integridad transaccional / Correctitud) | Monolito modular (facilita transacciones ACID robustas) o Microservicios con patrones de Saga estrictos. |
+| Sistema académico cuyas reglas de inscripción cambian cada semestre. | Mantenibilidad (Modificabilidad / Flexibilidad) | Arquitectura Limpia / Hexagonal o Monolito modular (permite aislar la lógica de negocio y cambiar reglas rápidamente sin propagar impactos) |
 
 
 ---
@@ -185,16 +186,23 @@ _Respuesta:_
 **15. Menciona las tres directrices de calidad de Pressman para un buen diseño y explica una de ellas con un ejemplo propio.**
 
 _Respuesta:_
+Las tres directrices de calidad de Roger Pressman para un buen diseño de software son:
+- El diseño debe implementar todos los requisitos explícitos dados por el cliente y reflejar los requisitos implícitos deseados.
+- El diseño debe ser una guía legible y comprensible para quienes construyen el código y para quienes lo van a probar y mantener.
+- El diseño debe proporcionar una representación completa del software, abarcando desde la arquitectura global hasta los detalles de implementación de cada componente.
+
+Ejemplo de la segunda directriz (Legibilidad y Comprensibilidad):
+Imagina que diseñamos un sistema de comercio electrónico y nombramos a una función principal **calc_X_val()**. Aunque cumple con su tarea matemática, un nuevo desarrollador no entenderá qué calcula sin leer todo el código fuente. En cambio, si el diseño y los diagramas especifican nombres claros como **calcular_costo_envio_con_impuestos()**, el diseño se vuelve auto-documentado, comprensible y fácil de mantener.
 
 
 **16. Ejercicio de relación** (completen con el número que corresponda a cada letra):
 
 | Síntoma | Número |
 |---|---|
-| A. Rigidez | ___ |
-| B. Fragilidad | ___ |
-| C. Inmovilidad | ___ |
-| D. Repetición innecesaria | ___ |
+| A. Rigidez | 3 |
+| B. Fragilidad | 4 |
+| C. Inmovilidad | 2 |
+| D. Repetición innecesaria | 1 |
 
 1. La misma lógica está copiada en varios lugares del sistema.
 2. Cuesta reutilizar un componente porque arrastra demasiadas dependencias.
