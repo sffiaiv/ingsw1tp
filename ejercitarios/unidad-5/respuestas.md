@@ -103,26 +103,28 @@ No conviene irse a los extremos porque se afecta directamente la complejidad y e
 
 | Módulo | Tipo de cohesión y justificación |
 |---|---|
-| a) "Utilidades": FormatearFecha, EnviarCorreo y CalcularIVA. |  |
-| b) "IniciarSistema": abre la conexión a la base, carga la configuración y borra archivos temporales. |  |
-| c) "CalcularPromedioAlumno": obtiene las notas de un alumno y devuelve su promedio. |  |
-| d) "ProcesarOperacion": recibe un código y, según su valor, imprime, guarda o elimina un registro. |  |
-| e) Lee un registro, lo valida y, con el registro ya validado, calcula su total. |  |
+| a) "Utilidades": FormatearFecha, EnviarCorreo y CalcularIVA. | Coincidental: realiza tareas diferentes que no están relacionadas entre sí. |
+| b) "IniciarSistema": abre la conexión a la base, carga la configuración y borra archivos temporales. | Temporal: agrupa tareas que se realizan al iniciar el sistema. |
+| c) "CalcularPromedioAlumno": obtiene las notas de un alumno y devuelve su promedio. | Funcional: todas las operaciones tienen el mismo objetivo: calcular el promedio del alumno. |
+| d) "ProcesarOperacion": recibe un código y, según su valor, imprime, guarda o elimina un registro. | Lógica: agrupa operaciones similares y elige cuál ejecutar según un código. |
+| e) Lee un registro, lo valida y, con el registro ya validado, calcula su total. | Secuencial: la salida de una operación sirve como entrada para la siguiente. |
 
 **8. Indica el tipo de acoplamiento en cada caso (de datos, por estampado, de control, externo, común o de contenido).**
 
 | Situación | Tipo de acoplamiento |
 |---|---|
-| a) El módulo A llama a B pasándole solo el idAlumno. |  |
-| b) A le pasa a B una bandera modo = "imprimir" / "guardar" que decide qué hace B. |  |
-| c) Varios módulos leen y modifican la variable global TotalVentas. |  |
-| d) A modifica directamente un atributo privado de B. |  |
-| e) A le pasa a B el objeto Alumno completo, aunque B solo usa la fecha de nacimiento. |  |
+| a) El módulo A llama a B pasándole solo el idAlumno. | De datos: se pasan únicamente los datos necesarios. |
+| b) A le pasa a B una bandera modo = "imprimir" / "guardar" que decide qué hace B. | De control: un parámetro determina el comportamiento del otro módulo. |
+| c) Varios módulos leen y modifican la variable global TotalVentas. | Común: comparten una variable global. |
+| d) A modifica directamente un atributo privado de B. | De contenido: un módulo accede o modifica directamente el interior de otro. |
+| e) A le pasa a B el objeto Alumno completo, aunque B solo usa la fecha de nacimiento. | Por estampado: se pasa una estructura completa aunque solo se necesita una parte. |
 
 **9. Explica por qué la alta cohesión y el bajo acoplamiento suelen ir de la mano. Da un ejemplo.**
 
 _Respuesta:_
+La alta cohesión significa que un módulo se encarga de una tarea específica, mientras que el bajo acoplamiento significa que depende poco de otros módulos. Ambos facilitan el mantenimiento y los cambios del sistema.
 
+Ejemplo: un módulo que calcula promedios solo se encarga de esa tarea y recibe las notas como parámetros, sin depender de otros módulos ni modificar sus datos internos.
 
 ---
 
@@ -132,11 +134,11 @@ _Respuesta:_
 
 | Estilo arquitectónico | Número |
 |---|---|
-| A. En capas | ___ |
-| B. Cliente-servidor | ___ |
-| C. Centrado en datos (repositorio) | ___ |
-| D. Tuberías y filtros | ___ |
-| E. Modelo-Vista-Controlador | ___ |
+| A. En capas | _5_ |
+| B. Cliente-servidor | _4_ |
+| C. Centrado en datos (repositorio) | _2_ |
+| D. Tuberías y filtros | _1_ |
+| E. Modelo-Vista-Controlador | _3_ |
 
 1. Un compilador: análisis léxico → sintáctico → semántico → generación de código.
 2. Un entorno de desarrollo donde editor, depurador y analizador comparten un modelo central del proyecto.
