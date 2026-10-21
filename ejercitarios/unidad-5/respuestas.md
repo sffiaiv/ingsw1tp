@@ -218,16 +218,15 @@ Imagina que diseñamos un sistema de comercio electrónico y nombramos a una fun
 
 | Letra | Principio | ¿Qué propone? |
 |---|---|---|
-| S |  |  |
-| O |  |  |
-| L |  |  |
-| I |  |  |
-| D |  |  |
+| S | Responsabilidad única (Single Responsibility) | Una clase debe tener una única responsabilidad y una sola razón para cambiar |
+| O | Abierto/Cerrado (Open/Closed) | Las clases deben estar abiertas a la extensión, pero cerradas a la modificación |
+| L | Sustitución de Liskov (Liskov Substitution) | Una clase derivada debe poder sustituir a su clase base sin alterar el comportamiento esperado |
+| I | Segregación de interfaces (Interface Segregation) | Es mejor tener interfaces pequeñas y específicas que obligar a una clase a implementar métodos que no necesita |
+| D | Inversión de dependencias (Dependency Inversion) | Los módulos de alto nivel deben depender de abstracciones y no directamente de implementaciones concretas |
 
 **18. Analiza la siguiente clase: "ReporteVentas obtiene las ventas desde SQL Server, calcula los totales, arma un PDF y lo envía por correo". ¿Qué principio SOLID viola principalmente? Propone una mejor distribución de responsabilidades (nombres de clases o interfaces y qué hace cada una).**
 
-_Respuesta:_
-
+_Respuesta:_ El principio que viola principalmente es el Principio de Responsabilidad Única (SRP), porque la clase realiza demasiadas tareas diferentes: consulta la base de datos, calcula totales, genera un PDF y envía correos. Por lo tanto, tiene varias razones para cambiar.
 
 ---
 
@@ -235,17 +234,19 @@ _Respuesta:_
 
 **19. Explica la diferencia entre una revisión técnica del diseño y una prueba del software. ¿Por qué conviene revisar el diseño antes de programar?**
 
-_Respuesta:_
+_Respuesta:_ Una revisión técnica del diseño consiste en analizar los documentos, diagramas y estructuras del sistema para detectar errores antes de programar. En cambio, una prueba del software consiste en ejecutar el programa para comprobar si funciona correctamente y cumple los requisitos.
+
+Conviene revisar el diseño antes de programar porque permite detectar errores tempranamente, reducir costos de corrección y evitar problemas estructurales que serían más difíciles de solucionar después.
 
 
 **20. Completa la matriz de trazabilidad para un sistema de biblioteca, indicando qué elementos de diseño (módulos, clases, interfaces, pantallas) satisfacen cada requerimiento.**
 
 | Req. | Descripción | Elementos de diseño que lo satisfacen |
 |---|---|---|
-| RF-01 | Registrar el préstamo de un libro a un socio. |  |
-| RF-02 | Avisar por correo al socio cuando vence un préstamo. |  |
-| RF-03 | Buscar libros por título, autor o tema. |  |
-| RNF-01 | Solo el personal de la biblioteca puede registrar préstamos. |  |
+| RF-01 | Registrar el préstamo de un libro a un socio. | Módulo GestionPrestamos, clases Prestamo y PrestamoDAO, interfaz IPrestamoService y pantalla RegistrarPrestamo |
+| RF-02 | Avisar por correo al socio cuando vence un préstamo. | Módulo Notificaciones, clases ServicioCorreo y Prestamo, interfaz I ServicioCorreo (o IEmailService) y tarea programada VerificarVencimientos |
+| RF-03 | Buscar libros por título, autor o tema. | Módulo Catalogo, clases Libro y LibroDAO, interfaz IBusquedaLibros y pantalla BuscarLibros |
+| RNF-01 | Solo el personal de la biblioteca puede registrar préstamos. | Módulo Seguridad, clases Autenticacion y Autorizacion, interfaz IAutorizacion y pantalla de inicio de sesión; control de permisos en el servicio de préstamos |
 
 
 ---
@@ -256,17 +257,17 @@ _Respuesta:_
 
 | Regla de oro | Ejemplo que la cumple | Ejemplo que la viola |
 |---|---|---|
-| Dar el control al usuario |  |  |
-| Reducir la carga de memoria |  |  |
-| Lograr una interfaz consistente |  |  |
+| Dar el control al usuario | Gmail permite cancelar el envío de un correo durante unos segundos | Un sitio que abre ventanas emergentes constantemente sin permitir cerrarlas fácilmente |
+| Reducir la carga de memoria | Una tienda online muestra el carrito y los productos seleccionados durante la compra | Un formulario que obliga al usuario a recordar datos de una pantalla anterior porque no los muestra ni los conserva |
+| Lograr una interfaz consistente | Microsoft Word mantiene una disposición y unos controles similares en sus distintas herramientas | Una aplicación donde el botón «Guardar» cambia de ubicación y significado en cada pantalla |
 
 **22. Realiza el análisis previo al diseño de la interfaz para la aplicación de autogestión de alumnos de la universidad.**
 
 | Aspecto | Descripción |
 |---|---|
-| Usuarios |  |
-| Tareas principales |  |
-| Entorno de uso |  |
+| Usuarios | Alumnos de la universidad, con distintos niveles de experiencia tecnológica, y personal administrativo que brinda asistencia |
+| Tareas principales | Consultar calificaciones, horarios, materias disponibles, inscribirse a asignaturas, verificar asistencia y descargar constancias |
+| Entorno de uso | Computadoras y teléfonos móviles, desde el hogar, la universidad o cualquier lugar con conexión a internet. Puede haber usuarios con conexiones lentas o pantallas pequeñas |
 
 
 ---
