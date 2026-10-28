@@ -298,18 +298,39 @@ Conviene revisar el diseño antes de programar porque permite detectar errores t
 
 **23. Evaluación heurística: elijan una pantalla real (de un sitio web o una app que usen), agreguen una captura al repositorio e identifiquen al menos tres problemas de usabilidad o accesibilidad.**
 
+*(Nota: Para este ejercicio se tomó como referencia la pantalla de búsqueda y filtros de una aplicación de e-commerce típica como Mercado Libre).*
+
 | Problema detectado | Heurística de Nielsen violada | Mejora propuesta |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| El botón para "Limpiar filtros" está ubicado al final de una lista muy larga de opciones y con un tamaño tipográfico pequeño. | Flexibilidad y eficiencia de uso | Colocar un botón fijo y destacado de "Limpiar todos los filtros" en la parte superior del panel para agilizar el reinicio de la búsqueda. |
+| Al aplicar un filtro restrictivo que no arroja ningún resultado, la pantalla se queda en blanco sin un mensaje orientativo ni opciones alternativas. | Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de errores | Mostrar un estado vacío claro ("No encontramos resultados") acompañado de sugerencias de búsqueda o botones para quitar los filtros aplicados. |
+| Contraste insuficiente en los textos secundarios de precios en cuotas (texto gris claro sobre fondo blanco), dificultando la lectura para usuarios con baja visión. | Accesibilidad / Estándares y consistencia (WCAG) | Oscurecer el tono del gris del texto secundario para cumplir con la relación de contraste mínima recomendada (WCAG AA). |
+
+---
 
 **24. Elijan una pantalla clave del sistema de su Trabajo Práctico y dibujen su wireframe (puede ser la foto de un boceto en papel, agregada al repositorio). Indiquen qué regla de oro o heurística tuvieron en cuenta en al menos dos decisiones.**
 
 _Respuesta:_
 
+* **Pantalla elegida:** Pantalla de Detalle del Producto (para nuestro sistema de e-commerce del Trabajo Práctico).
+* **Descripción del wireframe:** 
+  * En la parte superior, una barra de navegación fija con el buscador y el acceso al carrito de compras.
+  * En el centro, un sector izquierdo con la galería de imágenes del producto y un sector derecho con el título, precio, opciones de cuotas, selector de cantidad y un botón principal de llamada a la acción ("Agregar al carrito").
+  * Más abajo, una sección colapsable con la descripción detallada y las opiniones de los usuarios.
+
+* **Decisiones de diseño basadas en heurísticas / reglas de oro:**
+  1. **Visibilidad del estado del sistema / Feedback inmediato:** Se diseñó una pequeña notificación flotante (*toast*) que aparece automáticamente al hacer clic en "Agregar al carrito", indicando de forma explícita que el producto se sumó con éxito y mostrando el contador actualizado en el ícono superior.
+  2. **Prevención de errores y claridad en la acción principal (CTA):** El botón de compra ("Agregar al carrito") se diseñó con un color de alto contraste, tamaño grande y ubicado en la zona de mayor atención visual, evitando que el usuario deba buscar la acción clave o cometa errores al intentar comprar.
+
+---
 
 **25. Reflexión final: ¿qué estilo arquitectónico proponen para el sistema de su Trabajo Práctico y por qué? Justifiquen la elección con al menos dos atributos de calidad del sistema.**
 
 _Respuesta:_
 
+Para nuestro sistema de comercio electrónico del Trabajo Práctico, proponemos utilizar una **Arquitectura en Capas (Layered Architecture)** clásica (separada en Presentación, Lógica de Negocio y Acceso a Datos). 
+
+Justificamos esta elección basándonos en los siguientes atributos de calidad:
+
+1. **Mantenibilidad:** Al separar estrictamente las responsabilidades (la interfaz gráfica no interactúa directamente con la base de datos, sino a través de la lógica de negocio), cualquier cambio visual o rediseño de la interfaz no afecta las reglas internas del sistema. Esto facilita la corrección de errores, la lectura del código por parte de todo el equipo y las futuras modificaciones.
+2. **Modificabilidad y Testabilidad:** Permite que las diferentes partes del sistema puedan ser probadas de forma aislada (por ejemplo, realizar pruebas unitarias sobre los cálculos de descuentos y stock en la capa de negocio sin necesidad de levantar la interfaz de usuario). Asimismo, si en el futuro se desea cambiar la tecnología de la base de datos o migrar la interfaz a una aplicación móvil, el impacto en el resto de la aplicación es mínimo.
