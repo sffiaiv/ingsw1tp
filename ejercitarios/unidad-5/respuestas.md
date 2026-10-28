@@ -147,11 +147,33 @@ Ejemplo: un módulo que calcula promedios solo se encarga de esa tarea y recibe 
 5. Un sistema contable organizado en presentación, lógica de negocio y acceso a datos.
 
 **11. Dibujá o describí la arquitectura en capas de un sistema que conozcas (de tu trabajo, de la universidad o una app de uso diario), indicando la responsabilidad de cada capa. Si lo dibujan, agreguen la imagen al repositorio y enlácenla en la respuesta.**
-
 _Respuesta:_
+### **Ejercicio 11: Descripción de la arquitectura en capas de un sistema de comercio electrónico**
 
+Un sistema de e-commerce se divide tradicionalmente en tres capas principales, lo que permite separar la interfaz visual, el procesamiento de las reglas del negocio y el almacenamiento de los datos de forma independiente y mantenible.
 
----
+#### **1. Capa de Presentación (Interfaz de Usuario / UI)**
+* **¿Qué es?** Es la interfaz con la que interactúa directamente el usuario final (tanto el cliente que compra como el administrador que gestiona el catálogo). Puede ser una aplicación móvil (iOS/Android) o una aplicación web que corre en el navegador.
+* **Responsabilidad principal:** 
+  * Mostrar los productos, el carrito de compras y las pantallas de pago de forma visualmente atractiva.
+  * Capturar las acciones y entradas del usuario (hacer clic en "Comprar", buscar un producto, ingresar datos de tarjeta).
+  * Realizar validaciones básicas del lado del cliente (por ejemplo, verificar que los campos obligatorios del formulario de registro no estén vacíos antes de enviarlos).
+  * Enviar las solicitudes al servidor y renderizar las respuestas recibidas.
+
+#### **2. Capa de Lógica de Negocio (Capa de Aplicación / Backend)**
+* **¿Qué es?** Es el "cerebro" del sistema. Funciona en un servidor central y contiene las reglas y la lógica bajo la cual opera el negocio. No tiene contacto visual directo con el usuario ni accede de forma cruda a las tablas físicas de la base de datos.
+* **Responsabilidad principal:**
+  * Procesar las reglas del comercio (por ejemplo: calcular descuentos según cupones, verificar si hay stock disponible antes de confirmar una compra).
+  * Gestionar la autenticación y autorización de usuarios (controlar qué usuario está logueado y qué permisos tiene).
+  * Coordinar el flujo de transacciones (procesar pagos mediante pasarelas externas, generar facturas y actualizar el inventario).
+  * Actuar como intermediario entre la capa de presentación y la capa de acceso a datos.
+
+#### **3. Capa de Acceso a Datos (Persistencia)**
+* **¿Qué es?** Es la capa encargada de interactuar directamente con los sistemas de almacenamiento (bases de datos relacionales o no relacionales, servicios de archivos, etc.).
+* **Responsabilidad principal:**
+  * Almacenar y recuperar la información persistente del sistema (datos de usuarios, catálogo de productos, órdenes de compra, historial de pagos).
+  * Ejecutar consultas, inserciones, actualizaciones y eliminaciones (operaciones CRUD) de manera segura y eficiente.
+  * Proteger la integridad de los datos mediante transacciones atómicas (por ejemplo, asegurar que si la compra falla, no se descuente el stock ni el dinero de forma inconsistente).
 
 ## Tema 6 · Estilos actuales y estrategia de selección
 
