@@ -4,7 +4,7 @@
 > Las imágenes (diagramas, capturas, wireframes) se suben a esta misma carpeta y se enlazan así: `![descripción](nombre-archivo.png)`
 
 ---
-
+ 
 ## Tema 1 · El diseño en la ingeniería de software
 
 **1. Explica con tus palabras la diferencia entre diseño conceptual y diseño técnico (detallado). Da un ejemplo de una decisión de cada tipo para un sistema de gestión de una biblioteca.**
