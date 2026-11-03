@@ -130,9 +130,6 @@ graph LR
 
 ---
 
-## 4. Modelo de dominio
-
-**Diagrama de clases conceptual:**
 
 ## 4. Modelo de dominio
 
@@ -272,7 +269,6 @@ Este flujo representa la interacción donde el encargado selecciona los producto
 
 ## 8. Matriz de trazabilidad
 
-## 8. Matriz de trazabilidad
 
 Relación explícita entre cada requisito funcional y el/los caso(s) de uso que lo satisfacen, garantizando una cobertura completa del sistema[cite: 1]:
 
