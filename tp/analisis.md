@@ -40,7 +40,28 @@ layout: default
 
 **Diagrama de casos de uso:**
 
-`[Insertar imagen: diagramas/casos-de-uso.png]`[cite: 1]
+## 3. Modelo de casos de uso
+
+**Diagrama de casos de uso del sistema:**
+
+```mermaid
+graph LR
+    subgraph FarmaClick [Sistema FarmaClick]
+        UC1((CU-01: Registrar Venta))
+        UC2((CU-02: Gestionar Inventario))
+        UC3((CU-03: Consultar Alertas de Stock/Vencimiento))
+        UC4((CU-04: Generar Cierre de Caja))
+    end
+
+    Actor1[Encargado de Mostrador]
+    Actor2[Administrador / Propietaria]
+
+    Actor1 --> UC1
+    Actor1 --> UC3
+    Actor2 --> UC1
+    Actor2 --> UC2
+    Actor2 --> UC3
+    Actor2 --> UC4 ```
 
 **Especificación de casos de uso principales:**
 
