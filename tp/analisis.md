@@ -36,9 +36,6 @@ layout: default
 
 ---
 
-## 3. Modelo de casos de uso
-
-**Diagrama de casos de uso:**
 
 ## 3. Modelo de casos de uso
 
@@ -68,34 +65,68 @@ graph LR
 
 ### CU-01 · Registrar Venta
 
-- **Actor(es):** Encargado de mostrador (Doris o personal)[cite: 1]
-- **Precondición:** El sistema debe tener los medicamentos cargados en el inventario con stock disponible y precios actualizados[cite: 1].
-- **Flujo principal:**[cite: 1]
+* **Actor(es):** Encargado de Mostrador, Administrador / Propietaria[cite: 1]
+* **Precondición:** 
+  1. El usuario ha iniciado sesión en el sistema con un perfil autorizado[cite: 1].
+  2. Los medicamentos deben estar previamente cargados en la base de datos con precio de venta y stock disponible mayor a cero.
+* **Flujo principal:**
   1. El usuario ingresa al módulo de Punto de Venta.
   2. El usuario busca el medicamento por nombre o principio activo.
   3. El sistema muestra los resultados coincidentes con su stock y precio.
-  4. El usuario selecciona el producto e indica la cantidad deseada para agregarlo al carrito.
+  4. El usuario selecciona el producto e indica la cantidad deseada para agregarlo al carrito[cite: 1].
   5. El sistema recalcula el subtotal y el total general de la venta.
   6. El usuario ingresa el monto en efectivo entregado por el cliente y el sistema calcula el vuelto.
   7. El usuario confirma la venta.
   8. El sistema descuenta el stock de los productos vendidos y registra la transacción.
-- **Flujos alternativos:**[cite: 1]
-  - *Stock insuficiente:* Si la cantidad solicitada supera el stock actual, el sistema muestra una advertencia impidiendo agregar el producto hasta ajustar la cantidad.
-- **Postcondición:** El inventario queda actualizado y la venta queda registrada para el arqueo diario[cite: 1].
+* **Flujos alternativos:**
+  * **Stock insuficiente:** Si la cantidad solicitada supera el stock actual, el sistema muestra una advertencia impidiendo agregar el producto hasta ajustar la cantidad.
+* **Postcondición:** El inventario queda actualizado y la venta queda registrada para el arqueo diario.
+
+---
 
 ### CU-02 · Gestionar Inventario
 
-- **Actor(es):** Administrador / Señora Doris[cite: 1]
-- **Precondición:** Ninguna[cite: 1].
-- **Flujo principal:**[cite: 1]
+* **Actor(es):** Administrador / Propietaria.
+* **Precondición:** Ninguna.
+* **Flujo principal:**
   1. El usuario accede al módulo de inventario.
   2. Selecciona la opción de agregar un nuevo medicamento o editar uno existente.
   3. Completa o modifica los campos obligatorios (nombre, lote, precio, stock, fecha de vencimiento).
   4. El usuario guarda los cambios.
   5. El sistema valida los datos y actualiza la base de datos.
-- **Flujos alternativos:**[cite: 1]
-  - *Datos incompletos:* Si falta algún campo obligatorio, el sistema muestra un mensaje de error y solicita completarlo.
-- **Postcondición:** Los cambios se reflejan inmediatamente en las consultas de mostrador y control de stock[cite: 1].
+* **Flujos alternativos:**
+  * **Datos incompletos:** Si falta algún campo obligatorio, el sistema muestra un mensaje de error y solicita completarlo.
+* **Postcondición:** Los cambios se reflejan inmediatamente en las consultas de mostrador y control de stock.
+
+---
+
+### CU-03 · Consultar Alertas de Stock/Vencimiento
+
+* **Actor(es):** Encargado de Mostrador, Administrador / Propietaria.
+* **Precondición:** El usuario se encuentra autenticado y accede al panel principal del sistema.
+* **Flujo principal:**
+  1. El usuario accede al módulo o pestaña de Alertas.
+  2. El sistema verifica el estado actual del inventario cruzando los datos de stock mínimo y fechas de caducidad.
+  3. El sistema muestra el listado detallado de productos con stock crítico y medicamentos próximos a vencer.
+  4. El usuario revisa la información para la toma de decisiones.
+* **Flujos alternativos:**
+  * **Sin alertas activas:** Si no existen productos con stock bajo o por vencer, el sistema muestra un mensaje indicando que todo se encuentra en orden.
+* **Postcondición:** El usuario obtiene visibilidad de los riesgos en el inventario sin alterar los datos del sistema.
+
+---
+
+### CU-04 · Generar Cierre de Caja
+
+* **Actor(es):** Administrador / Propietaria
+* **Precondición:** Se han registrado transacciones de venta durante la jornada laboral.
+* **Flujo principal:**
+  1. El usuario selecciona la opción de cierre de caja en el sistema
+  2. El sistema procesa y suma el total de ingresos monetarios obtenidos en las ventas del día
+  3. El sistema muestra en pantalla el resumen consolidado de la recaudación diaria.
+  4. El usuario valida y confirma el cierre de la jornada.
+* **Flujos alternativos:**
+  * **Sin ventas registradas:** Si el día no registra transacciones, el sistema muestra un total de ingresos igual a cero.
+* **Postcondición:** Queda registrado el reporte de ingresos de la jornada para el control financiero del negocio.
 
 ---
 
@@ -103,7 +134,46 @@ graph LR
 
 **Diagrama de clases conceptual:**
 
-`[Insertar imagen: diagramas/modelo-dominio.png]`[cite: 1]
+## 4. Modelo de dominio
+
+**Diagrama de clases conceptual:**
+
+```mermaid
+classDiagram
+    class Medicamento {
+        +int id_medicamento
+        +String nombre_comercial
+        +String principio_activo
+        +String forma_farmaceutica
+        +float precio_venta
+    }
+
+    class Lote_Inventario {
+        +int id_lote
+        +String numero_lote
+        +int stock_actual
+        +int stock_minimo
+        +Date fecha_vencimiento
+    }
+
+    class Venta {
+        +int id_venta
+        +Timestamp fecha_hora
+        +float total_pagado
+        +float monto_recibido
+        +float vuelto
+    }
+
+    class Detalle_Venta {
+        +int id_detalle
+        +int cantidad
+        +float precio_unitario
+    }
+
+    Medicamento "1" --> "*" Lote_Inventario : contiene
+    Venta "1" --> "*" Detalle_Venta : incluye
+    Lote_Inventario "1" --> "*" Detalle_Venta : es vendido en
+```
 
 El dominio del sistema se compone de las siguientes entidades principales[cite: 1]:
 - **Medicamento:** Representa la información base del producto (nombre comercial, principio activo, forma farmacéutica y precio de venta).
@@ -115,11 +185,37 @@ El dominio del sistema se compone de las siguientes entidades principales[cite: 
 
 ## 5. Diagramas de comportamiento
 
-**Diagrama de secuencia — Proceso de Venta:**
+**Diagrama de secuencia — Proceso de Venta (CU-01):**
 
-`[Insertar imagen: diagramas/secuencia-flujo-principal.png]`[cite: 1]
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Encargado as Encargado de Mostrador
+    participant Front as Front-end (React)
+    participant Back as Back-end (Node.js)
+    participant DB as Base de Datos (PostgreSQL)
 
-Este flujo representa la interacción donde el encargado selecciona los productos en la interfaz de **React (Front-end)**, el cual realiza una petición HTTP a la API de **Node.js (Back-end)** para consultar y actualizar la base de datos **PostgreSQL**, procesando el cálculo del vuelto y descontando el stock de forma segura[cite: 1].
+    Encargado->>Front: Ingresa al módulo de Punto de Venta (POS)
+    Encargado->>Front: Busca medicamento (nombre o principio activo)
+    Front->>Back: Envía petición HTTP GET (búsqueda de producto)
+    Back->>DB: Consulta medicamentos, lotes y stock disponible
+    DB-->>Back: Retorna resultados con stock y precios vigentes
+    Back-->>Front: Devuelve lista de productos coincidentes
+    Front-->>Encargado: Muestra resultados en pantalla
+    
+    Encargado->>Front: Selecciona producto e indica cantidad (Agrega al carrito)
+    Front->>Front: Recalcula subtotal y total general
+    
+    Encargado->>Front: Ingresa monto en efectivo recibido y confirma venta
+    Front->>Back: Envía petición HTTP POST (registrar venta y detalles)
+    
+    Back->>DB: Inicia transacción: Inserta Venta, Detalle_Venta y descuenta stock del Lote
+    DB-->>Back: Confirma éxito de la transacción
+    Back-->>Front: Retorna respuesta exitosa con cálculo del vuelto
+    Front-->>Encargado: Muestra mensaje de éxito y monto exacto del vuelto
+```
+
+Este flujo representa la interacción donde el encargado selecciona los productos en la interfaz de **React (Front-end)**, el cual realiza una petición HTTP a la API de **Node.js (Back-end)** para consultar y actualizar la base de datos **PostgreSQL**, procesando el cálculo del vuelto y descontando el stock de forma segura.
 
 ---
 
@@ -127,15 +223,40 @@ Este flujo representa la interacción donde el encargado selecciona los producto
 
 **Pantalla — Punto de Venta (Mostrador):**
 
-`[Insertar imagen: diagramas/mockup-pantalla1.png]`[cite: 1]
-
-> *Descripción:* Interfaz optimizada para agilizar la atención en el mostrador mediante una barra de búsqueda rápida, visualización de lotes y stock disponible, y el cálculo automatizado del vuelto en efectivo[cite: 1].
+```text
++-----------------------------------------------------------------------+
+| FarmaClick - Punto de Venta                  [ Usuario: Doris ]       |
++-----------------------------------------------------------------------+
+| Buscar producto: [ Paracetamol_________________ ] [ Buscar ]          |
++-----------------------------------------------------------------------+
+| RESULTADOS DE BÚSQUEDA:                                               |
+| - Paracetamol 500mg (Lote: A123) | Stock: 45 | Gs. 5.000  [ + Agregar ]|
+| - Ibuprofeno 400mg  (Lote: B456) | Stock: 12 | Gs. 8.000  [ + Agregar ]|
++-----------------------------------------------------------------------+
+| CARRITO DE COMPRAS:                                                   |
+| 1x Paracetamol 500mg ................................... Gs. 5.000    |
+|-----------------------------------------------------------------------+
+| TOTAL A PAGAR: Gs. 5.000                                              |
+| Efectivo recibido: [ 10.000___ ]    VUELTO: Gs. 5.000                 |
+|                                       [ CANCELAR ]  [ CONFIRMAR VENTA]|
++-----------------------------------------------------------------------+
+```
+> *Descripción:* Interfaz optimizada para agilizar la atención en el mostrador mediante una barra de búsqueda rápida, visualización de lotes y stock disponible, y el cálculo automatizado del vuelto en efectivo.
 
 **Pantalla — Alertas de Vencimiento y Stock Mínimo:**
 
-`[Insertar imagen: diagramas/mockup-pantalla2.png]`[cite: 1]
-
-> *Descripción:* Panel de control visual que advierte de forma anticipada sobre medicamentos con stock crítico o próximos a caducar para prevenir pérdidas económicas[cite: 1].
+```
++-----------------------------------------------------------------------+
+| FarmaClick - Alertas del Sistema             [ Volver al Inicio ]     |
++-----------------------------------------------------------------------+
+| ⚠️  ALERTAS DE STOCK MÍNIMO:                                          |
+|  - Amoxicilina 500mg (Stock actual: 2 | Mínimo: 5)                    |
+|                                                                       |
+| ⏰ MEDICAMENTOS PRÓXIMOS A VENCER (Menos de 60 días):                 |
+|  - Omeprazol 20mg | Lote: C789 | Vence: 15/12/2026 | Stock: 10        |
++-----------------------------------------------------------------------+
+```
+> *Descripción:* Panel de control visual que advierte de forma anticipada sobre medicamentos con stock crítico o próximos a caducar para prevenir pérdidas económicas en el negocio.
 
 ---
 
@@ -143,24 +264,27 @@ Este flujo representa la interacción donde el encargado selecciona los producto
 
 | ID | Regla |
 |---|---|
-| RN-01 | Ningún medicamento cuyo lote se encuentre vencido podrá ser comercializado ni incluido en una venta activa dentro del sistema[cite: 1]. |
-| RN-02 | El sistema no permitirá registrar una venta si la cantidad solicitada de un medicamento supera el stock físico disponible en el inventario[cite: 1]. |
-| RN-03 | Las modificaciones de precios de venta sólo podrán ser realizadas por el rol de administración y se aplicarán de forma inmediata a las siguientes transacciones[cite: 1]. |
+| RN-01 | Ningún medicamento cuyo lote se encuentre vencido podrá ser comercializado ni incluido en una venta activa dentro del sistema |
+| RN-02 | El sistema no permitirá registrar una venta si la cantidad solicitada de un medicamento supera el stock físico disponible en el inventario |
+| RN-03 | Las modificaciones de precios de venta sólo podrán ser realizadas por el rol de administración y se aplicarán de forma inmediata a las siguientes transacciones |
 
 ---
 
 ## 8. Matriz de trazabilidad
 
-| Requisito | Caso(s) de uso relacionado(s) |
-|---|---|
-| RF-01 | CU-02 (Gestionar Inventario)[cite: 1] |
-| RF-02 | CU-01 (Registrar Venta)[cite: 1] |
-| RF-03 | CU-01 (Registrar Venta)[cite: 1] |
-| RF-04 | CU-01 (Registrar Venta)[cite: 1] |
-| RF-05 | Módulo de Alertas / Dashboard[cite: 1] |
-| RF-06 | Módulo de Alertas / Reportes[cite: 1] |
-| RF-07 | Módulo de Arqueo y Caja[cite: 1] |
+## 8. Matriz de trazabilidad
 
+Relación explícita entre cada requisito funcional y el/los caso(s) de uso que lo satisfacen, garantizando una cobertura completa del sistema[cite: 1]:
+
+| Requisito Funcional | Descripción del Requisito | Caso(s) de Uso Relacionado(s) |
+|---|---|---|
+| **RF-01** | Gestión de Medicamentos (CRUD) | CU-02 (Gestionar Inventario) |
+| **RF-02** | Búsqueda rápida de productos por nombre o principio activo | CU-01 (Registrar Venta)|
+| **RF-03** | Cálculo automático del total a cobrar y el vuelto | CU-01 (Registrar Venta)|
+| **RF-04** | Descuento automático del stock general al confirmar venta | CU-01 (Registrar Venta) |
+| **RF-05** | Avisos visuales o alertas de stock mínimo | CU-03 (Consultar Alertas de Stock/Vencimiento) |
+| **RF-06** | Reporte o listado de medicamentos próximos a vencer | CU-03 (Consultar Alertas de Stock/Vencimiento)|
+| **RF-07** | Resumen de ingresos monetarios para el cierre de caja diario | CU-04 (Generar Cierre de Caja) |
 ---
 
 [← Anterior: Conceptualización](conceptualizacion.md) · [Siguiente: Diseño →](diseno.md)
