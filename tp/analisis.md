@@ -61,7 +61,8 @@ graph LR
     Actor2 --> UC1
     Actor2 --> UC2
     Actor2 --> UC3
-    Actor2 --> UC4 ```
+    Actor2 --> UC4
+```
 
 **Especificación de casos de uso principales:**
 
