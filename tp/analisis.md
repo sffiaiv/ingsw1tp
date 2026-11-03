@@ -15,13 +15,13 @@ layout: default
 
 | ID | Requisito | Prioridad |
 |---|---|---|
-| RF-01 | El sistema debe permitir registrar, modificar, consultar y dar de baja medicamentos (CRUD), gestionando nombre comercial, principio activo, lote, precio de venta, stock actual, stock mínimo y fecha de vencimiento[cite: 1]. | Alta |
-| RF-02 | El sistema debe permitir buscar productos rápidamente por nombre o principio activo y agregarlos al carrito de compra en el módulo de punto de venta[cite: 1]. | Alta |
-| RF-03 | El sistema debe calcular automáticamente el total a cobrar y el vuelto según el monto entregado por el cliente[cite: 1]. | Alta |
-| RF-04 | El sistema debe descontar de forma automática las cantidades correspondientes del inventario general al confirmar una venta[cite: 1]. | Alta |
-| RF-05 | El sistema debe mostrar un aviso visual o alerta cuando un producto alcance o baje de su stock mínimo preestablecido[cite: 1]. | Media |
-| RF-06 | El sistema debe generar un reporte o listado de alerta con los medicamentos próximos a su fecha de caducidad[cite: 1]. | Media |
-| RF-07 | El sistema debe permitir generar un resumen del total de ingresos monetarios obtenidos en el cierre de caja diario[cite: 1]. | Baja |
+| RF-01 | El sistema debe permitir registrar, modificar, consultar y dar de baja medicamentos (CRUD), gestionando nombre comercial, principio activo, lote, precio de venta, stock actual, stock mínimo y fecha de vencimiento. | Alta |
+| RF-02 | El sistema debe permitir buscar productos rápidamente por nombre o principio activo y agregarlos al carrito de compra en el módulo de punto de venta. | Alta |
+| RF-03 | El sistema debe calcular automáticamente el total a cobrar y el vuelto según el monto entregado por el cliente. | Alta |
+| RF-04 | El sistema debe descontar de forma automática las cantidades correspondientes del inventario general al confirmar una venta. | Alta |
+| RF-05 | El sistema debe mostrar un aviso visual o alerta cuando un producto alcance o baje de su stock mínimo preestablecido. | Media |
+| RF-06 | El sistema debe generar un reporte o listado de alerta con los medicamentos próximos a su fecha de caducidad. | Media |
+| RF-07 | El sistema debe permitir generar un resumen del total de ingresos monetarios obtenidos en el cierre de caja diario. | Baja |
 
 ---
 
@@ -29,10 +29,10 @@ layout: default
 
 | ID | Requisito | Categoría |
 |---|---|---|
-| RNF-01 | Las consultas de búsqueda de medicamentos en el mostrador y el registro de ventas deben completarse en menos de 2 segundos[cite: 1]. | Rendimiento |
-| RNF-02 | El acceso a las funciones administrativas (modificación de precios y gestión de inventario) requerirá autenticación básica de usuario[cite: 1]. | Seguridad |
-| RNF-03 | La interfaz gráfica debe ser intuitiva, con botones grandes y flujos cortos, permitiendo su uso sin requerir conocimientos técnicos avanzados[cite: 1]. | Usabilidad |
-| RNF-04 | El sistema debe garantizar la consistencia de los datos mediante transacciones seguras en la base de datos relacional para evitar pérdidas de información[cite: 1]. | Confiabilidad |
+| RNF-01 | Las consultas de búsqueda de medicamentos en el mostrador y el registro de ventas deben completarse en menos de 2 segundos. | Rendimiento |
+| RNF-02 | El acceso a las funciones administrativas (modificación de precios y gestión de inventario) requerirá autenticación básica de usuario. | Seguridad |
+| RNF-03 | La interfaz gráfica debe ser intuitiva, con botones grandes y flujos cortos, permitiendo su uso sin requerir conocimientos técnicos avanzados. | Usabilidad |
+| RNF-04 | El sistema debe garantizar la consistencia de los datos mediante transacciones seguras en la base de datos relacional para evitar pérdidas de información. | Confiabilidad |
 
 ---
 
@@ -65,15 +65,15 @@ graph LR
 
 ### CU-01 · Registrar Venta
 
-* **Actor(es):** Encargado de Mostrador, Administrador / Propietaria[cite: 1]
+* **Actor(es):** Encargado de Mostrador, Administrador / Propietaria
 * **Precondición:** 
-  1. El usuario ha iniciado sesión en el sistema con un perfil autorizado[cite: 1].
+  1. El usuario ha iniciado sesión en el sistema con un perfil autorizado.
   2. Los medicamentos deben estar previamente cargados en la base de datos con precio de venta y stock disponible mayor a cero.
 * **Flujo principal:**
   1. El usuario ingresa al módulo de Punto de Venta.
   2. El usuario busca el medicamento por nombre o principio activo.
   3. El sistema muestra los resultados coincidentes con su stock y precio.
-  4. El usuario selecciona el producto e indica la cantidad deseada para agregarlo al carrito[cite: 1].
+  4. El usuario selecciona el producto e indica la cantidad deseada para agregarlo al carrito.
   5. El sistema recalcula el subtotal y el total general de la venta.
   6. El usuario ingresa el monto en efectivo entregado por el cliente y el sistema calcula el vuelto.
   7. El usuario confirma la venta.
@@ -172,7 +172,7 @@ classDiagram
     Lote_Inventario "1" --> "*" Detalle_Venta : es vendido en
 ```
 
-El dominio del sistema se compone de las siguientes entidades principales[cite: 1]:
+El dominio del sistema se compone de las siguientes entidades principales:
 - **Medicamento:** Representa la información base del producto (nombre comercial, principio activo, forma farmacéutica y precio de venta).
 - **Lote_Inventario:** Administra el control físico por cada partida de medicamentos, incluyendo su número de lote, stock actual, stock mínimo y fecha de vencimiento. Un medicamento puede tener múltiples lotes.
 - **Venta:** Registra la transacción comercial realizada en el mostrador (fecha y hora, total pagado, monto recibido y vuelto).
@@ -270,7 +270,7 @@ Este flujo representa la interacción donde el encargado selecciona los producto
 ## 8. Matriz de trazabilidad
 
 
-Relación explícita entre cada requisito funcional y el/los caso(s) de uso que lo satisfacen, garantizando una cobertura completa del sistema[cite: 1]:
+Relación explícita entre cada requisito funcional y el/los caso(s) de uso que lo satisfacen, garantizando una cobertura completa del sistema:
 
 | Requisito Funcional | Descripción del Requisito | Caso(s) de Uso Relacionado(s) |
 |---|---|---|
